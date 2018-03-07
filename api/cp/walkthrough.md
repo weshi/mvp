@@ -41,4 +41,4 @@ Next, we run the script then click the Run button. Once complete we will see "Al
 ```
 
 This point we will see this:
-![Screen](/images/walkthrough.png)
+(/images/walkthrough.png)
