@@ -31,6 +31,7 @@ The following are the supported properties:
 | creationDate | Date and time the document was created | (DateTime) |
 
 The following are the supported methods:
+
 | Method | Name | Description |
 |--------|------|-------------|
 | load | Loads the item after a context.sync() | Object. load("author, lastAuthor, revisionNumber, title, subject, keywords, comments, category, manager, company, creationDate") |
