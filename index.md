@@ -8,7 +8,8 @@ At the end of each main section, there is a link to the *survey*. Please complet
 
 Please follow along by picking a feature you're interested in. We are eager to hear your feedback!
 
-## [Custom Functions](custom-functions/custom-functions.md) (preview - requires PC and Office Insiders install)
+## [Custom Functions](custom-functions/custom-functions.md) 
+(custom functions is in preview - requires a Windows PC and Office Insiders install)
 ## [Experimentation Office-js API](maker/index.md)
 ## [New Excel JavaScript APIs](api/index.md)
 
