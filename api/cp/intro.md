@@ -39,15 +39,23 @@ The following are the supported methods:
 ## Custom Document Properties API
 The following are supported methods of the custom document properties:
 
+### context.workbook.properties.customdocumentproperties
+
 | Methods | Description |   |
 |---------|-------------|---|
-| getItem | The name of the custom document property to get | Object.getItem(“name”)
-**Returns** CustomDocumentProperty object |
-| load | Loads the item after a context.sync() | Object.load(“key”,”value”) |
+| getItem | The name of the custom document property to get | Object.getItem(“name”) **Returns** CustomDocumentProperty object |
 | add | Adds/Updates a given property on the next context.sync() | Object.add(“key”,”value”) |
 
+
 ### context.workbook.properties.customdocumentproperty
-The following are the supported properties for the customdocumentproeprty object returned from the getItem call.
+The following are the supported methods for the customdocumentproeprty object returned from the getItem call.
+
+| Method Name | Description | Type |
+|---------------|-------------|------|
+| load | Loads the item after a context.sync() | Object.load(“key”,”value”) |
+| delete | Deletes the custom property | (n/a) |
+
+The following are the supported properties for the customdocumentproeprty object returned from the getItem call
 
 | Property Name | Description | Type |
 |---------------|-------------|------|
