@@ -4,7 +4,7 @@ _[Home page](../index.md)_
 
 # Walkthrough
 
-In this first walkthroug you will open script lab and replace the code inside the Excel.run() with the following code:
+In this first walkthrough we will open Script Lab and replace the code inside the Excel.run() with the following code:
 
 ```javascript
     let customDocProperties = context.workbook.properties.custom;
@@ -20,7 +20,8 @@ In this first walkthroug you will open script lab and replace the code inside th
         console.log("All done");
     });
 ```
-One you run this you should see "All done!" in the console. You have successfully set the properties. Now that we have set the properties, lets go read them:
+
+Next, we run the script then click the Run button. Once complete we will see "All done!" in the console. You have successfully set the properties. Now that we have set the properties, lets go read them:
 
 ```javascript
     let customDocProperties = context.workbook.properties.custom;
@@ -38,3 +39,5 @@ One you run this you should see "All done!" in the console. You have successfull
         console.log("ExcelDemo: " + customProperty.value);
     });
 ```
+
+This point we will see this:
