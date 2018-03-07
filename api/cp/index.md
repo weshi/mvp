@@ -2,7 +2,7 @@ _[Home page](../index.md)_
 
 
 
-# Data validation API 
+# Custom Properties API 
 
 ## [Introduction](intro.md)
 ## [Walkthrough](walkthrough.md)

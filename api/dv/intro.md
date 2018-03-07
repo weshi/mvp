@@ -2,29 +2,52 @@ _[Home page](../index.md)_
 
 
 
-# Data Validation
-# Add data validation to Excel ranges
+# Custom Properties
 
-The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI:
+## Document Properties API 
+This covers:
+* Document Properties 
+* Custom Document Proeprties
 
-- [Apply data validation to cells](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [More on data validation](https://microsoft.sharepoint.com/:p:/r/teams/oext/_layouts/15/Doc.aspx?sourcedoc=%7B51143964-d52c-429d-bfac-c7495473d536%7D&action=edit)
-- [Description and examples of data validation in Excel](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+The document properties allows you to read and write both the built-in document properties as well as add/remove custom document properties. The following are the supported methods and proeprties:
 
-## Programmatic control of data validation
+### context.workbook.properties
+The following are the supported properties:
 
-The `Range.dataValidation` property, which takes a  [DataValidation](https://dev.office.com/reference/add-ins/excel/datavalidation) object, is the entry point for programmatic control of data validaiton in Excel. There are five properties to the `DataValidation` object:
+| Property Name | Description | Type |
+|---------------|-------------|------|
+| custom  | Custom Document Properties  | CustomDocumentProperties |
+| author | The author of the document | (string) |
+| lastAuthor | The last person to modify the workbook | (string) |
+| revisionNumber | The current revision of the workbook | (string) |
+| title | The title of the workbook  | (string) |
+| subject | The subject of the workbook | (string) |
+| keywords | Custom keywords that can be added to help identify/find the workbook | (string) |
+| comments | Comments about the workbook | (string) |
+| category | Workbook category | (string) |
+| manager | The name of a manager | (string) |
+| company | A company name | (string) |
+| creationDate | Date and time the document was created | (DateTime) |
 
-- `rule` &#8212; Defines what constitutes valid data for the range. See [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule).
-- `errorAlert` &#8212; Specifies whether an error pops up if the user enters invalid data, and defines the alert text, title, and style; for example, **Informational**, **Warning**, and **Stop**. See [DataValidationErrorAlert](https://dev.office.com/reference/add-ins/excel/datavalidationerroralert).
-- `prompt` &#8212; Specifies whether a prompt appears when the user hovers over the range and defines the prompt message. See [DataValidationPrompt](https://dev.office.com/reference/add-ins/excel/datavalidationprompt).
-- `ignoreBlanks` &#8212; Specifies whether the data validation rule applies to blank cells in the range. Defaults to `true`.
-- `type` &#8212; A read-only identification of the validation type, such as WholeNumber, Date, TextLength, etc. It is set indirectly when you set the `rule` property.
+The following are the supported methods:
+| Method | Name | Description |
+|--------|------|-------------|
+| load | Loads the item after a context.sync() | Object. load("author, lastAuthor, revisionNumber, title, subject, keywords, comments, category, manager, company, creationDate") |
 
-> [!NOTE]
-> Data validation added programmatically behaves just like manually added data validation. In particular, note that data validation is triggered only if the user directly types a value into a cell or copies and pastes a cell from elsewhere in the workbook and takes the **Values** paste option. If the user copies a cell and does a plain paste into a range with data validation, validation is not triggered.
+## Custom Document Properties API
+The following are supported methods of the custom document properties:
 
-### Creating validation rules
+| Methods | Description |   |
+|---------|-------------|---|
+| getItem | The name of the custom document property to get | Object.getItem(“name”)
+**Returns** CustomDocumentProperty object |
+| load | Loads the item after a context.sync() | Object.load(“key”,”value”) |
+| add | Adds/Updates a given property on the next context.sync() | Object.add(“key”,”value”) |
 
-To add data validation to a range, your code must set the `rule` proeprty of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
+### context.workbook.properties.customdocumentproperty
+The following are the supported properties for the customdocumentproeprty object returned from the getItem call.
 
+| Property Name | Description | Type |
+|---------------|-------------|------|
+| key | The key for the loaded property | (string) |
+| Value | The value for the loaded property | (string) |
