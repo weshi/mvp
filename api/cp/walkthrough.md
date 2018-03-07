@@ -41,4 +41,4 @@ Next, we run the script then click the Run button. Once complete we will see "Al
 ```
 
 This point we will see this:
-![alt text](images/walkthrough.png?raw=true "walkthrough results")
+![alt text](images/walkthrough.PNG?raw=true "walkthrough results")
