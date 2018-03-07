@@ -4,10 +4,8 @@ _[Home page](../index.md)_
 
 # Exercise
 
-Imagine you are developing an add-in as a simplified interface to author document properties for custom fields in SharePoint and a backend system that helps process them. After putting specific data into the custom fields via your add-in, a backend process then takes that document and performs some function. Here is what your add-ins does:
+Imagine you are developing an add-in that needs to create, update and remove custom document properties. For this exercise you will want to write code that:
 
-1. Shows the user the document properties and allows them to edit specific items.
-1. Allows the user to change specific customer properties.
-1. Allows the user to Set those properties on a button click
-
-
+1. Adds a custom document property, give it any name and value you like
+2. Updates the custom document property with any value you like
+3. Removes the custom document property.
