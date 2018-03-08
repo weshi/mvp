@@ -3,7 +3,7 @@
 Please select a link: 
 
 ## [Setup](setup.md)
-## [Introduction](custom-functions.md)
+## [Introduction and walkthrough](custom-functions.md)
 
 
 
